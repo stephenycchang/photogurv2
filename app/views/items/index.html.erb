@@ -1,0 +1,7 @@
+<h1>My Items</h1>
+<%= link_to "New Item", "/items/new" %>
+
+<% @items.each do |item| %>
+<p><%= item[:sku] %>,<%= item[:description] %></p>
+<%= link_to image_tag(item.url), "/items/#{item.id}"  %>
+<% end %>
